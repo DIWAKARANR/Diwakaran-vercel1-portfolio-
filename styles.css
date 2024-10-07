@@ -1,0 +1,433 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #ffffff;
+    --background-gradient: linear-gradient(45deg, #1a1a1a, #2c3e50);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-gradient);
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(44, 62, 80, 0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Navigation Styles */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    margin-bottom: 4rem;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Home Section */
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.glitch {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.typing {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.technical-skills,
+.soft-skills {
+    flex: 1;
+    min-width: 300px;
+}
+
+.skill-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-icon {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+/* Projects Section */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+/* Certifications Section */
+.certification-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.certification-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(44, 62, 80, 0.9);
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+/* All New Animations */
+
+/* 1. Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 2. Glowing Border */
+@keyframes glowingBorder {
+    0% { box-shadow: 0 0 5px var(--secondary-color); }
+    50% { box-shadow: 0 0 20px var(--secondary-color); }
+    100% { box-shadow: 0 0 5px var(--secondary-color); }
+}
+
+.glowing-border {
+    animation: glowingBorder 2s ease-in-out infinite;
+}
+
+/* 3. Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-animation:hover {
+    animation: shake 0.8s ease-in-out;
+}
+
+/* 4. Pulse Animation  */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* 5. Rotating Border */
+@keyframes rotateBorder {
+    0% { border-color: var(--secondary-color); }
+    25% { border-color: var(--accent-color); }
+    50% { border-color: #2ecc71; }
+    75% { border-color: #9b59b6; }
+    100% { border-color: var(--secondary-color); }
+}
+
+.rotating-border {
+    border: 2px solid;
+    animation: rotateBorder 4s linear infinite;
+}
+
+/* 6. Text Shadow Wave */
+@keyframes textShadowWave {
+    0% { text-shadow: 0 0 0 var(--secondary-color); }
+    50% { text-shadow: 0 0 10px var(--secondary-color); }
+    100% { text-shadow: 0 0 0 var(--secondary-color); }
+}
+
+.text-shadow-wave {
+    animation: textShadowWave 2s ease-in-out infinite;
+}
+
+/* 7. Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+.bounce-animation {
+    animation: bounce 2s infinite;
+}
+
+/* 8. Flip Card Animation */
+@keyframes flipCard {
+    0% { transform: perspective(400px) rotateY(0); }
+    100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+.flip-card-animation {
+    animation: flipCard 1s linear;
+}
+
+/* 9. Typewriter Cursor */
+@keyframes cursorBlink {
+    0%, 100% { border-right-color: transparent; }
+    50% { border-right-color: var(--text-color); }
+}
+
+.typewriter-cursor {
+    border-right: 2px solid;
+    animation: cursorBlink 0.7s step-end infinite;
+    padding-right: 2px;
+}
+
+/* 10. Rainbow Text */
+@keyframes rainbowText {
+    0% { color: #ff0000; }
+    20% { color: #ff7f00; }
+    40% { color: #ffff00; }
+    60% { color: #00ff00; }
+    80% { color: #0000ff; }
+    100% { color: #ff0000; }
+}
+
+.rainbow-text {
+    animation: rainbowText 5s linear infinite;
+}
+
+/* 11. Slide Up Fade In */
+@keyframes slideUpFadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up-fade-in {
+    animation: slideUpFadeIn 0.5s ease-out;
+}
+
+/* 12. Rotate Scale */
+@keyframes rotateScale {
+    0% { transform: rotate(0) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.rotate-scale {
+    animation: rotateScale 2s ease-in-out infinite;
+}
+
+/* 13. Gradient Shift */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-shift {
+    background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(44, 62, 80, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .glitch {
+        font-size: 2.5rem;
+    }
+
+    .typing {
+        font-size: 1.5rem;
+    }
+}
